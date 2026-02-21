@@ -1,0 +1,14 @@
+title: Chi Gook Kim
+description: "Chi Kim is an Associate Professor at Berklee College of Music and open-source developer building accessibility tools and curricula for blind and visually impaired musicians."
+tagline: "Love music, technology, accessibility! 👨🏻‍💻🎹🐕‍🦺"
+baseurl: ""
+url: "https://chigkim.github.io"
+author: Chi Kim
+timezone: America/New_York
+excerpt_separator: "<!--more-->"
+permalink: /:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/

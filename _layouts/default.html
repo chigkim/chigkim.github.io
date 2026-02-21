@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <div class="site-branding">
+        <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+        {% if site.tagline %}<p class="site-tagline">{{ site.tagline }}</p>{% endif %}
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="{{ '/bio/' | relative_url }}"{% if page.url == '/bio/' %} aria-current="page"{% endif %}>Bio</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}"{% if page.url == '/projects/' or page.collection == 'projects' %} aria-current="page"{% endif %}>Projects</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.collection == 'posts' %} aria-current="page"{% endif %}>Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <footer>
+    <nav class="footer-social" aria-label="Social media links">
+      <a href="https://www.linkedin.com/in/chi-kim-65221725/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+      <a href="https://github.com/chigkim" rel="noopener noreferrer" target="_blank">GitHub</a>
+      <a href="https://mastodon.social/@chikim" rel="me noopener noreferrer" target="_blank">Mastodon</a>
+    </nav>
+    <p>&copy; {{ 'now' | date: '%Y' }} Chi Kim</p>
+  </footer>
+</body>
+</html>
